@@ -1,5 +1,14 @@
 # Getting Started with Virtual Machines: Install Ubuntu 24.04 on Oracle VirtualBox (Windows Host)
 
+[![VirtualBox](https://img.shields.io/badge/VirtualBox-007EC7?style=for-the-badge&logo=virtualbox&logoColor=white)](https://www.virtualbox.org/)
+[![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/download/desktop)
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.kernel.org/)
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows/)
+
+This step-by-step guide is designed for beginners and intermediate users looking to install Ubuntu 24.04 on Oracle VirtualBox running on a Windows host. You'll learn how to download the required software, set up a virtual machine, install Ubuntu, and configure key system settings. By the end, you'll have a working Ubuntu environment and hands-on experience with virtualization and Linux.
+
+---
+
 ## Step 1. Download the Packages
 
 1. Download VirtualBox 7.0.18 and the Extension Pack from [VirtualBox Downloads Page](https://www.virtualbox.org/wiki/Downloads).
@@ -10,12 +19,20 @@
 
 ![Ubuntu ISO Download Page](images/VM-Install/UbuntuISODownloadPage.png)
 
+> **Tip:** Always download the latest stable versions to ensure compatibility and security.
+
+---
+
 ## Step 2: Install VirtualBox and Extensions
 
 1. Run the installer as Administrator and follow prompts.  
 2. Double-click the Extension Pack to install it.
 
 ![VirtualBox Setup Wizard](images/VM-Install/SetupWizard.png)
+
+> **Warning:** Running the installer without administrator privileges may cause installation issues.
+
+---
 
 ## Step 3. Create Your Virtual Machine
 
@@ -44,6 +61,10 @@
 - Settings > Network > Adapter 1: Set Adapter 1 to Bridged  
 
 ![Network with Bridged Adapter](images/VM-Install/NetworkWithBridgedAdapter.png)
+
+> **Best Practice:** Allocating sufficient resources ensures smooth performance but avoid overcommitting your host machine.
+
+---
 
 ## Step 4. Install the Ubuntu 24.04 LTS Image
 
@@ -75,6 +96,10 @@
 
 ![Restart Prompt](images/VM-Install/RestartPrompt.jpg)
 
+> **Tip:** Back up any important data before choosing to erase disk during installation.
+
+---
+
 ## Step 5. Update and Modify System Access
 
 1. Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> to open the terminal in Ubuntu.  
@@ -99,7 +124,9 @@ sudo usermod -aG plugdev $USER   # USB and removable drives
 sudo usermod -aG dialout $USER   # Serial port access
 ```
 
-> **Note:** Replace `$USER` with your username if you encounter issues recognizing the variable. You might need to reboot the session for these changes to take place.
+> **Note:** Replace `$USER` with your username if you encounter issues recognizing the variable. You might need to reboot the session for these changes to take effect.
+
+---
 
 ## Step 6. Install VirtualBox Guest Additions
 
@@ -131,7 +158,9 @@ sudo umount /media/$USER/VBox_GAs_7.0.18
 eject /dev/sr0
 ```
 
-> **Note:** Now you should be able to enable the guest OS screen to adjust and resize automatically according to the VirtualBox window size. To adjust the display size of your VirtualBox guest OS, dynamically locate the menu bar at the top of the VirtualBox window and click on **Enable Auto-Resize Guest Display**.
+> **Note:** Enabling the guest OS screen to auto-resize improves usability. Use the VirtualBox menu bar to activate **Enable Auto-Resize Guest Display**.
+
+---
 
 ## Step 8. Create a Shared Folder
 
@@ -151,6 +180,8 @@ sudo mount -t vboxsf VMShared /mnt/VMShared
 cd /mnt/VMShared
 ```
 
+---
+
 ## Step 9. Uninstall VirtualBox (Optional)
 
 1. Press <kbd>Win</kbd> + <kbd>R</kbd> and type:
@@ -162,3 +193,21 @@ appwiz.cpl
 2. In the Programs and Features window, locate Oracle VM VirtualBox.  
 3. Click **Uninstall** and follow the instructions.  
 4. Restart your computer if needed.
+
+---
+
+## Summary Checklist
+
+- [ ] Download VirtualBox and Ubuntu ISO  
+- [ ] Install VirtualBox and Extension Pack  
+- [ ] Create and configure the VM with appropriate resources  
+- [ ] Install Ubuntu OS on the VM  
+- [ ] Update system and add user to necessary groups  
+- [ ] Install VirtualBox Guest Additions for enhanced features  
+- [ ] Create shared folders for file exchange  
+- [ ] (Optional) Uninstall VirtualBox if no longer needed  
+
+---
+
+You now have a fully functional Ubuntu 24.04 virtual machine running on Windows using Oracle VirtualBox. 
+For further learning, consider exploring [VirtualBox Documentation](https://www.virtualbox.org/manual/UserManual.html) and [Ubuntu Official Tutorials](https://ubuntu.com/tutorials).
