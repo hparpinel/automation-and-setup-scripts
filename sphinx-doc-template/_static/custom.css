@@ -1,0 +1,11 @@
+.wy-side-nav-search {
+    background-color: #ECF0F1;
+}
+
+.wy-side-nav-search>a {
+    color: #020d1c;
+}
+
+.wy-side-nav-search>div.version {
+    color: #000; 
+}

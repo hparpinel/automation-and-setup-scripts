@@ -1,30 +1,44 @@
-# Installation Guides
+# Automation and Setup Scripts
 
-This repository serves as a personal knowledge base containing detailed, step-by-step instructions for installing various tools, environments, and software commonly used in development and technical workflows.
+A growing collection of setup guides, automation scripts, and documentation templates used for streamlining development environments, system administration tasks, and documentation pipelines.
 
-## What You'll Find Here
+This repository is designed to demonstrate practical, reusable tools and templates I’ve developed or customized for personal and professional use.
 
-The guides document instructions for:
+---
 
-- Setting up virtual machines
-- Installing CLI tools and SDKs
-- Preparing development environments
-- Configuring system dependencies
+## Repository Structure
 
-> This repository is actively maintained and expanded with new guides planned for additional tools and environments.
+### `instructions/`
+Contains step-by-step setup instructions and technical how-tos.
 
-## Purpose
+Examples:
+- `linux_disk_cleanup_and_analysis.md`
+- `Installing_Oracle_Virtual_Machine.md`
 
-The primary goal of this repository is to provide a clear, easy-to-follow reference for future setups and learning. All guides are written in plain Markdown for easy reading, editing, and sharing.
+### `scripts/`
+Automation scripts for setup, cleanup, configuration, and other repetitive tasks.
 
-## How to Use
+### `sphinx-doc-template/`
+A complete Sphinx documentation template supporting both single-page and multi-page HTML/PDF outputs.
 
-Browse the guides to find detailed installation instructions tailored to specific tools or environments. Each guide is designed to be self-contained and accessible for users with varying levels of experience.
+Includes:
+- `conf.py`, `Makefile`: Customized build configuration
+- `multi-pgs-src/`, `single-pg-src/`: Example sources
+- `_figs/`, `_fonts/`, `_static/`, `_templates/`, `_preamble/`: Design/layout resources
+- `output-dir/`: Where generated documents are placed
 
-## Notes
+---
 
-- These guides are based on personal experience and tested configurations.
-- They may include links to official documentation or extra tips for troubleshooting.
-- No automation scripts are included — only written instructions.
+## Work in Progress
 
-Feel free to fork or adapt these guides for your own use!
+This repository is actively maintained and will continue to grow with more:
+- Setup and troubleshooting guides
+- Shell and Python automation scripts
+- Documentation examples and templates
+
+---
+
+## Contributions
+
+If you find these useful or have suggestions, feel free to fork, star, or open an issue.
+

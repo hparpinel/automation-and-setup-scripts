@@ -1,0 +1,90 @@
+% ------------------------------------------------------
+% PREAMBLE SECTION OF CONF.PY
+% ------------------------------------------------------
+% Page settings
+\usepackage{mdframed}
+\mdfsetup{roundcorner=0pt}
+\usepackage{geometry} % Required for adjusting page dimensions and margins
+\geometry{top=1in, bottom=1in, left=1in, right=1in} % Page margins
+\geometry{headheight=2cm} % Header height
+
+% Custom Header & Footer
+\usepackage{graphicx} % Required for including images
+\usepackage{fancyhdr} % Required for custom headers
+\pagestyle{fancy}
+
+\newcommand{\headerlogo}{ 
+	\fancyhf{}  % Clear all header and footer fields
+	\fancyhead[C]{\raisebox{-10ex}{\includegraphics[width=10cm]{logo-transparent-png.png}}}
+	%\fancyhead[R]{\raisebox{-10ex}{\includegraphics[width=8cm]{logo-transparent-png.png}}}
+	%\fancyhead[L]{}
+	%\fancyhead[C]{}
+  \rfoot{\thepage}
+	%\renewcommand{\headrulewidth}{0pt} % No horizontal line in the header
+	
+}
+% Change page number Setting
+\pagenumbering{arabic} % Arabic numerals for page numbering 
+
+\usepackage{titling} % Allows custom title configuration
+\usepackage{listings} % Required for insertion of code
+\usepackage{xcolor} % Required for custom colors
+\usepackage{color} % Required for custom colors
+\usepackage{fancyvrb} % Required for custom verbatim environments
+
+\definecolor{red}{RGB}{186,57,37} % Red color
+\definecolor{blue}{RGB}{0,51,102} %  
+
+\definecolor{lightblue}{RGB}{0, 130, 240} % 
+
+\definecolor{mycolor}{rgb}{0.9, 0.9, 0.9} % 
+
+% Font settings
+\definecolor{darkgray}{rgb}{0.2,0.2,0.2} % Font color
+\color{darkgray} % Change the font color to dark gray
+\fontsize{10}{11}\selectfont % Font size
+\setlength{\parskip}{0.5\baselineskip} % Add space between paragraphs
+
+\definecolor{white}{rgb}{1,1,1} % Define the color white
+
+\usepackage{fontspec}
+\setmainfont{Montserrat-Light.ttf}[
+  Path = ./_fonts/,
+  ItalicFont = Montserrat-Italic.ttf,
+  BoldFont = Montserrat-Bold.ttf,
+  BoldItalicFont = Montserrat-BoldItalic.ttf
+]
+
+\usepackage{titlesec} % Allows customization of titles
+\titleclass{\chapter}{straight} % Removes "Chapter" text from titles
+\titleformat{\chapter}[block]{\normalfont\fontsize{20}{22}\selectfont\color{blue}}{}{1em}{} % Change the look of the section titles
+
+%\titlespacing*{\chapter}{0pt}{\baselineskip}{\baselineskip} % Spacing around titles
+%\titlespacing*{<command>}{<left>}{<before>}{<after>}
+\titlespacing*{\chapter}{0pt}{1\baselineskip}{1\baselineskip} % reduces the space after the chapter title to -0.5 times the baseline skip
+
+% Sections subtitles
+\titleformat{\section}[block]{\normalfont\fontsize{16}{18}\selectfont\color{blue}}{\thesection}{1em}{} % Change the look of the section titles
+\titlespacing*{\section}{0pt}{1\baselineskip}{1\baselineskip}
+
+% Subsection
+\titleformat{\subsection}[block]{\normalfont\fontsize{14}{15}\selectfont\color{blue}}{\thesubsection}{1em}{} % Change the look of the section titles
+\titlespacing*{\subsection}{0pt}{1\baselineskip}{1\baselineskip}
+
+% Subsection
+\titleformat{\subsubsection}[block]{\normalfont\fontsize{13}{14}\selectfont\color{blue}}{\thesubsubsection}{1em}{} % Change the look of the section titles
+\titlespacing*{\subsubsection}{0pt}{1\baselineskip}{1\baselineskip}
+
+% Remove page number from the footer of the contents page
+\let\oldtableofcontents\tableofcontents 
+\renewcommand{\tableofcontents}{
+    \pagestyle{empty} % Removes page numbers
+    \thispagestyle{empty} % Removes page numbers
+    \oldtableofcontents  % ToC command
+    \clearpage % Starts new page
+}
+\AtBeginDocument{
+	\addtocontents{toc}{\protect\thispagestyle{empty}} % Removes page numbers from the first page of ToC
+	}
+
+

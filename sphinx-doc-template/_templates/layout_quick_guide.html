@@ -1,0 +1,23 @@
+{% extends "!layout.html" %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{{ pathto('_static/custom_quick_guide.css', 1) }}" type="text/css" />
+{% endblock %}
+
+{% block sidebar %}
+    <div class="wy-nav-side" role="navigation" aria-label="main navigation">
+        <div class="wy-side-scroll">
+            <!-- Your custom content here -->
+            <h3>Custom Sidebar</h3>
+            <p>This is my custom sidebar content.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="wy-breadcrumbs">
+    <li><a href="#" class="custom-icon-home" aria-label="Home"></a></li>
+    <li class="breadcrumb-item active">Digital Library Documentation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+</ul>
+{% endblock %}
